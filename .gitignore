@@ -1,0 +1,12 @@
+.env
+config.yaml
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+outputs/*
+!outputs/.gitkeep
+
+tests/fixtures/tmp_outputs/
+tests/fixtures/real_smoke_outputs/

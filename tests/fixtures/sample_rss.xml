@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Fixture Australian Operations Signals</title>
+    <link>https://example.test/news</link>
+    <description>Fixture feed for Lead Hunter tests</description>
+    <item>
+      <title>Aussie Logistics Co hiring Operations Automation Manager in Melbourne</title>
+      <link>fixture://tests/fixtures/sample_job_page.html</link>
+      <description>Aussie Logistics Co is hiring for operations automation, reporting, support queue triage, invoice workflows, and customer onboarding across Australia.</description>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Tiny Hobby Blog writes about a weekend project</title>
+      <link>fixture://tests/fixtures/sample_company_page.html</link>
+      <description>Tiny Hobby Blog has no Australia business operations signal and no public evidence of workflow pain.</description>
+      <pubDate>Sat, 09 May 2026 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

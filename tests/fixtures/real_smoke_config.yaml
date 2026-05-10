@@ -1,0 +1,40 @@
+run:
+  max_hours: 0.25
+  max_leads: 2
+  min_score: 70
+  allow_c_tier: false
+  crawl_delay_seconds: 2
+  request_timeout_seconds: 20
+  max_candidates_per_source: 2
+  inner_page_delay_seconds: 1.5
+  max_spend_usd: 25.0
+  stall_limit: 30
+  output_dir: "tests/fixtures/real_smoke_outputs"
+  target_country: "Australia"
+  target_city_preference: "Melbourne"
+  user_agent: "LeadHunter/1.0 research bot for public business information"
+
+model:
+  provider: "openai"
+  model_env_var: "OPENAI_MODEL"
+  temperature: 0.2
+  max_output_tokens: 2000
+
+sources:
+  - id: "seek_melbourne_operations_manager"
+    type: "job_board_url"
+    url: "https://au.seek.com/operations-manager-jobs/in-All-Melbourne-VIC"
+    priority: 1
+    tags: ["jobs", "melbourne", "operations", "logistics"]
+
+  - id: "seek_automation_all_australia"
+    type: "job_board_url"
+    url: "https://au.seek.com/automation-jobs/in-All-Australia"
+    priority: 2
+    tags: ["jobs", "australia", "automation", "engineering"]
+
+  - id: "seek_sydney_operations"
+    type: "job_board_url"
+    url: "https://au.seek.com/operations-jobs/in-Sydney-NSW"
+    priority: 3
+    tags: ["jobs", "sydney", "operations", "admin"]

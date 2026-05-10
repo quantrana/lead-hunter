@@ -1,0 +1,106 @@
+{
+  "research_profiles": {
+    "Aussie Logistics Co": {
+      "company_name": "Aussie Logistics Co",
+      "website": "https://aussielogistics.example",
+      "domain": "aussielogistics.example",
+      "location": "Melbourne, Australia",
+      "industry": "Logistics",
+      "company_size_signal": "Public hiring and national freight operations suggest operational scale.",
+      "growth_signal": "Hiring for operations automation and data reporting roles.",
+      "hiring_signal": "Public job signal mentions operations automation manager.",
+      "automation_pain_signals": [
+        "manual reporting across operations",
+        "support queue triage",
+        "invoice follow-up and customer onboarding checks"
+      ],
+      "likely_tools_or_systems": ["CRM", "spreadsheets", "support queue"],
+      "likely_departments_with_pain": ["Operations", "Customer Support", "Finance Ops"],
+      "evidence_items": [
+        {
+          "url": "fixture://tests/fixtures/sample_job_page.html",
+          "title": "Operations Automation Manager - Aussie Logistics Co",
+          "quote_or_summary": "Aussie Logistics Co is hiring in Melbourne for operations automation covering manual reporting, support queue triage, invoice follow-up, CRM hygiene, and onboarding.",
+          "signal_type": "hiring_signal",
+          "why_it_matters": "The role describes repeatable workflows suited to a custom AI agent with human review."
+        },
+        {
+          "url": "fixture://tests/fixtures/sample_company_page.html",
+          "title": "Aussie Logistics Co - Melbourne freight operations",
+          "quote_or_summary": "The company page describes Melbourne logistics operations, support queues, spreadsheet reporting, invoice follow-up, and onboarding checks.",
+          "signal_type": "operational_workflow",
+          "why_it_matters": "These are concrete company-level workflows where an AI agent could prepare next actions."
+        }
+      ],
+      "source_urls": [
+        "fixture://tests/fixtures/sample_job_page.html",
+        "fixture://tests/fixtures/sample_company_page.html"
+      ],
+      "confidence": 0.88,
+      "disqualifiers": [],
+      "notes": "Fixture profile with strong public evidence."
+    },
+    "Tiny Hobby Blog writes about a weekend project": {
+      "company_name": "Tiny Hobby Blog writes about a weekend project",
+      "website": null,
+      "domain": null,
+      "location": null,
+      "industry": "Personal blog",
+      "company_size_signal": "No scale signal found.",
+      "growth_signal": null,
+      "hiring_signal": null,
+      "automation_pain_signals": [],
+      "likely_tools_or_systems": [],
+      "likely_departments_with_pain": [],
+      "evidence_items": [
+        {
+          "url": "fixture://tests/fixtures/sample_company_page.html",
+          "title": "Weak source",
+          "quote_or_summary": "No business operations signal was verified.",
+          "signal_type": "weak_signal",
+          "why_it_matters": "Weak evidence should be rejected rather than saved."
+        }
+      ],
+      "source_urls": ["fixture://tests/fixtures/sample_company_page.html"],
+      "confidence": 0.2,
+      "disqualifiers": ["No company-level business pain"],
+      "notes": "Fixture weak profile."
+    }
+  },
+  "scores": {
+    "Aussie Logistics Co": {
+      "total_score": 86,
+      "fit_tier": "A",
+      "recommended_agent_type": "Internal Ops Router",
+      "pain_summary": "Manual reporting, support queue triage, invoice follow-up, and onboarding checks across Melbourne logistics operations.",
+      "why_hourglass": "Hourglass could scope a focused internal operations agent that routes requests, prepares summaries, and keeps human approval in place.",
+      "strongest_evidence": "Aussie Logistics Co is hiring in Melbourne for operations automation covering manual reporting, support queue triage, invoice follow-up, CRM hygiene, and onboarding.",
+      "risks_or_uncertainties": "Fixture evidence should be replaced with live public URLs for the final run.",
+      "confidence": 0.86,
+      "should_save": true,
+      "rejection_reason": null,
+      "reasoning_summary": "Strong Australia relevance, explicit operations automation hiring, and concrete repetitive workflows."
+    },
+    "Tiny Hobby Blog writes about a weekend project": {
+      "total_score": 22,
+      "fit_tier": "Reject",
+      "recommended_agent_type": "Other",
+      "pain_summary": "No verified business workflow pain.",
+      "why_hourglass": "No fit based on available evidence.",
+      "strongest_evidence": "No usable evidence.",
+      "risks_or_uncertainties": "Weak source and no verified Australian business operations.",
+      "confidence": 0.2,
+      "should_save": false,
+      "rejection_reason": "Weak evidence and no operational pain.",
+      "reasoning_summary": "Rejected to avoid padding the lead queue."
+    }
+  },
+  "outreach": {
+    "Aussie Logistics Co": {
+      "outreach_subject": "AI agent idea for Aussie Logistics Co",
+      "outreach_pitch": "Hey Aussie Logistics Co,\n\nI noticed Aussie Logistics Co is hiring in Melbourne for operations automation covering manual reporting, support queue triage, invoice follow-up, CRM hygiene, and onboarding. It looks like there may be a workflow around manual reporting and support triage where an AI agent could help prepare summaries and route next actions for review.\n\nA practical first build could be an Internal Ops Router, which would support the team while keeping human approval in place.\n\nWorth a quick look?",
+      "suggested_next_step": "Human review, then decide whether this company is worth contacting.",
+      "reasoning_summary": "Outreach references the strongest hiring evidence and keeps the ask lightweight."
+    }
+  }
+}

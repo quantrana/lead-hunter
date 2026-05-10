@@ -1,0 +1,45 @@
+run:
+  max_hours: 1
+  max_leads: 5
+  min_score: 70
+  allow_c_tier: false
+  crawl_delay_seconds: 0
+  request_timeout_seconds: 5
+  inner_page_delay_seconds: 0
+  max_spend_usd: 25.0
+  stall_limit: 30
+  output_dir: "tests/fixtures/tmp_outputs"
+  target_country: "Australia"
+  target_city_preference: "Melbourne"
+  user_agent: "LeadHunter/1.0 test bot"
+
+model:
+  provider: "openai"
+  model_env_var: "OPENAI_MODEL"
+  temperature: 0.2
+  max_output_tokens: 2000
+
+sources:
+  - id: "fixture_rss_jobs"
+    type: "rss"
+    url: "fixture://tests/fixtures/sample_rss.xml"
+    priority: 1
+    tags: ["fixture", "jobs", "operations"]
+
+  - id: "fixture_company_page"
+    type: "webpage"
+    url: "fixture://tests/fixtures/sample_company_page.html"
+    priority: 2
+    tags: ["fixture", "company"]
+
+  - id: "fixture_manual_seed"
+    type: "manual_company_seed"
+    priority: 3
+    tags: ["manual", "testing-only"]
+    companies:
+      - name: "Aussie Logistics Co"
+        website: "https://aussielogistics.example"
+        reason: "Manual seed for testing only: Melbourne logistics company with operations workflows."
+      - name: "Invalid JSON Pty"
+        website: "https://invalid-json.example"
+        reason: "Manual seed used to test invalid model JSON handling."

@@ -1,0 +1,42 @@
+run:
+  max_hours: 36
+  max_leads: 50
+  min_score: 70
+  allow_c_tier: false
+  crawl_delay_seconds: 8
+  request_timeout_seconds: 20
+  inner_page_delay_seconds: 1.5
+  max_spend_usd: 25.0
+  stall_limit: 30
+  output_dir: "outputs"
+  target_country: "Australia"
+  target_city_preference: "Melbourne"
+  user_agent: "LeadHunter/1.0 research bot for public business information"
+
+model:
+  provider: "openai"
+  model_env_var: "OPENAI_MODEL"
+  temperature: 0.2
+  max_output_tokens: 2000
+
+sources:
+  - id: "example_google_news_ai_automation_au"
+    type: "rss"
+    url: "PUT_RSS_URL_HERE"
+    priority: 1
+    tags: ["news", "australia", "ai", "automation"]
+
+  - id: "example_jobs_ai_operations"
+    type: "job_board_url"
+    url: "PUT_PUBLIC_JOB_SEARCH_URL_HERE"
+    priority: 2
+    tags: ["jobs", "operations", "automation"]
+
+  - id: "example_manual_seed"
+    type: "manual_company_seed"
+    priority: 3
+    tags: ["manual", "testing-only"]
+    companies:
+      - name: "Example Company"
+        website: "https://example.com"
+        reason: "Manual seed for testing only"
