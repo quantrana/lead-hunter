@@ -190,6 +190,3 @@ The dashboard is static HTML. It has summary cards, filters, a ranked table, lea
 
 Public pages vary in structure, so extraction is best-effort. Real lead quality depends on source quality. The agent does not use LinkedIn, private databases, or CRM enrichment. It is designed for a human-reviewed queue, not automated selling.
 
-## What I Would Improve Next If Hired
-
-I would add source-specific parsers for approved job boards, a human review workflow, richer evaluation against Hourglass ICP examples, scheduled monitoring, and better analytics on why leads are accepted or rejected.
